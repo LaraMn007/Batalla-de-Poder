@@ -1,20 +1,10 @@
 package batalladepoder.Clases;
 
 public class Pila {
-    private NodoPila tope;
-
-    private static class NodoPila {
-        Carta carta;
-        NodoPila siguiente;
-
-        public NodoPila(Carta carta) {
-            this.carta = carta;
-            this.siguiente = null;
-        }
-    }
+    private Nodo tope;
 
     public void push(Carta carta) {
-        NodoPila nuevoNodo = new NodoPila(carta);
+        Nodo nuevoNodo = new Nodo(carta);
         nuevoNodo.siguiente = tope;
         tope = nuevoNodo;
     }
@@ -27,7 +17,7 @@ public class Pila {
     }
 
     public void mostrar() {
-        NodoPila temp = tope;
+        Nodo temp = tope;
         if (temp == null) {
             System.out.println("No hay cartas derrotadas");
             return;

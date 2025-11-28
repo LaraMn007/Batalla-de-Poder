@@ -1,20 +1,10 @@
 package batalladepoder.Clases;
 
 public class Cola {
-    private NodoCola frente, fin;
-
-    private static class NodoCola {
-        Carta carta;
-        NodoCola siguiente;
-
-        public NodoCola(Carta carta) {
-            this.carta = carta;
-            this.siguiente = null;
-        }
-    }
+    private Nodo frente, fin;
 
     public void encolar(Carta carta) {
-        NodoCola nuevoNodo = new NodoCola(carta);
+        Nodo nuevoNodo = new Nodo(carta);
         if (fin == null) {
             frente = fin = nuevoNodo;
         } else {
@@ -37,7 +27,7 @@ public class Cola {
 
     public int tamaño() {
         int count = 0;
-        NodoCola temp = frente;
+        Nodo temp = frente;
         while (temp != null) {
             count++;
             temp = temp.siguiente;
